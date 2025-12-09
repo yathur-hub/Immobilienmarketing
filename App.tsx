@@ -434,9 +434,35 @@ const Dashboard: React.FC<{ onViewChange: (view: ViewState) => void, onContactCl
         </div>
       </section>
 
+      {/* 5.5 Quote Section */}
+      <section className="max-w-5xl mx-auto">
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/40 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative overflow-hidden">
+          {/* Background Accent */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-50 pointer-events-none"></div>
+
+          <div className="shrink-0 relative z-10">
+            <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg ring-1 ring-slate-100">
+               <img 
+                src="https://raw.githubusercontent.com/yathur-hub/Immobilienmarketing/efd45159e1f47d103beda622c9e0f8f2de0de7ea/public/Yathur%20Portrait.png"
+                alt="Yathur Nathan" 
+                className="w-full h-full object-cover"
+               />
+            </div>
+          </div>
+          <div className="text-center md:text-left relative z-10">
+            <blockquote className="text-xl md:text-2xl font-medium text-slate-900 leading-relaxed mb-6 italic">
+              «Erfolgreiche Vermarktung basiert auf Daten, Geschwindigkeit und Präzision. Mein Fokus: Immobilienvermarkter dabei zu unterstützen, Leerstände zu senken und Vermietungsergebnisse nachhaltig zu steigern.»
+            </blockquote>
+            <div>
+              <div className="font-bold text-slate-900 text-lg">Yathur Nathan</div>
+              <div className="text-blue-600 text-sm font-bold uppercase tracking-wider">Gründer & Inhaber</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 6. Why Us / Funnel */}
       <section className="text-center max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-slate-900 mb-12">Warum ImmoMatrix?</h2>
         <div className="grid sm:grid-cols-3 gap-6 text-left">
            {[
              '100% Real Estate Fokus',
