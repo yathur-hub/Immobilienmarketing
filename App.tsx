@@ -450,7 +450,7 @@ const Dashboard: React.FC<{ onViewChange: (view: ViewState) => void, onContactCl
             </div>
           </div>
           <div className="text-center md:text-left relative z-10">
-            <blockquote className="text-xl md:text-2xl font-medium text-slate-900 leading-relaxed mb-6 italic">
+            <blockquote className="text-xl md:text-2xl font-bold text-slate-900 leading-relaxed mb-6">
               «Erfolgreiche Vermarktung basiert auf Daten, Geschwindigkeit und Präzision. Mein Fokus: Immobilienvermarkter dabei zu unterstützen, Leerstände zu senken und Vermietungsergebnisse nachhaltig zu steigern.»
             </blockquote>
             <div>
