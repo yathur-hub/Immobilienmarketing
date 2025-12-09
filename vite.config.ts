@@ -6,9 +6,15 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
     plugins: [react()],
+    // Explicitly define public directory to ensure Vercel/Render and local dev server find assets
+    publicDir: 'public', 
     define: {
       // Polyfill process.env.API_KEY for the browser
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
     },
+    build: {
+      // Ensure empty output directory is cleaned but public assets are copied
+      emptyOutDir: true,
+    }
   };
 });
