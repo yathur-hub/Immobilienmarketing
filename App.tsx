@@ -191,7 +191,7 @@ const App: React.FC = () => {
 
 const Logo: React.FC<{ className?: string }> = ({ className = "" }) => (
   <img 
-    src="https://raw.githubusercontent.com/yathur-hub/Immobilienmarketing/refs/heads/main/NathanProductionLogoDark.svg"
+    src="https://raw.githubusercontent.com/yathur-hub/Immobilienmarketing/refs/heads/main/public/NathanProductionLogoDark.svg"
     alt="Nathan Productions"
     className={`h-10 w-auto object-contain transition-transform duration-300 hover:scale-105 mix-blend-multiply ${className}`}
   />
