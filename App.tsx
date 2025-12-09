@@ -4,14 +4,15 @@ import {
   Calculator, 
   TrendingDown, 
   CheckCircle2, 
-  ArrowRight,
-  Target,
-  Award,
-  DollarSign,
-  PieChart,
-  Activity,
-  ChevronRight,
-  Layout
+  ArrowRight, 
+  Target, 
+  Award, 
+  DollarSign, 
+  PieChart, 
+  Activity, 
+  ChevronRight, 
+  Layout, 
+  Home 
 } from 'lucide-react';
 import { ViewState } from './types';
 import VacancyCalculator from './components/VacancyCalculator';
@@ -74,7 +75,8 @@ const App: React.FC = () => {
               <NavButton 
                 active={view === ViewState.DASHBOARD} 
                 onClick={() => setView(ViewState.DASHBOARD)} 
-                label="Home" 
+                label="" 
+                icon={<Home size={20} />} 
               />
               <NavButton 
                 active={view === ViewState.VACANCY_CALC} 
@@ -189,9 +191,9 @@ const App: React.FC = () => {
 
 const Logo: React.FC<{ className?: string }> = ({ className = "" }) => (
   <img 
-    src="https://raw.githubusercontent.com/yathur-hub/Immobilienmarketing/refs/heads/main/Nathan%20Productions%20Logo%20.svg"
+    src="https://raw.githubusercontent.com/yathur-hub/Immobilienmarketing/refs/heads/main/NathanProductionLogoDark.svg"
     alt="Nathan Productions"
-    className={`h-10 w-auto object-contain transition-transform duration-300 hover:scale-105 ${className}`}
+    className={`h-10 w-auto object-contain transition-transform duration-300 hover:scale-105 mix-blend-multiply ${className}`}
   />
 );
 
@@ -204,7 +206,7 @@ const NavButton: React.FC<{ active: boolean; onClick: () => void; label: string;
         : 'text-slate-500 hover:text-slate-900 hover:bg-slate-200/50'
     }`}
   >
-    {icon && <span className="mr-2 opacity-80">{icon}</span>}
+    {icon && <span className={`${label ? 'mr-2' : ''} opacity-80`}>{icon}</span>}
     {label}
   </button>
 );
