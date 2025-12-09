@@ -373,7 +373,7 @@ const Dashboard: React.FC<{ onViewChange: (view: ViewState) => void, onContactCl
           />
           <ModuleCard 
             icon={<CheckCircle2 size={32} className="text-green-500" />}
-            title="Lead-Mgmt" 
+            title="Lead Management" 
             tag="CRM-Ready"
             desc="Automatische Qualifizierung und Priorisierung. Ihr Vertrieb spricht nur mit den besten Kontakten."
           />
