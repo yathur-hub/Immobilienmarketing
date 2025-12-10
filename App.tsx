@@ -191,9 +191,9 @@ const App: React.FC = () => {
 
 const Logo: React.FC<{ className?: string }> = ({ className = "" }) => (
   <img 
-    src="https://raw.githubusercontent.com/yathur-hub/Immobilienmarketing/refs/heads/main/static/NathanProductionLogoDark.svg"
+    src="https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/BrandLogo/NathanProductionLogoDark.png"
     alt="Nathan Productions"
-    className={`h-10 w-auto object-contain transition-transform duration-300 hover:scale-105 mix-blend-multiply ${className}`}
+    className={`h-10 w-auto object-contain transition-transform duration-300 hover:scale-105 ${className}`}
   />
 );
 
@@ -260,6 +260,19 @@ const HubSpotForm: React.FC = () => {
 };
 
 const Dashboard: React.FC<{ onViewChange: (view: ViewState) => void, onContactClick: () => void }> = ({ onViewChange, onContactClick }) => {
+  const platforms = [
+    { name: 'Display & Video 360', src: 'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/DV360.png' },
+    { name: 'Google Ads', src: 'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/GoogleAds.png' },
+    { name: 'LinkedIn', src: 'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/LinkedIn.png' },
+    { name: 'Meta', src: 'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/Meta.png' },
+    { name: 'Pinterest', src: 'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/Pinterest.png' },
+    { name: 'TikTok', src: 'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/TikTok.png' },
+    { name: 'YouTube', src: 'https://raw.githubusercontent.com/yathur-hub/NathanProductions-BrandAsstes/refs/heads/main/YouTube.png' }
+  ];
+
+  // Duplicate the array to create the infinite loop effect
+  const carouselItems = [...platforms, ...platforms];
+
   return (
     <div className="space-y-24 pb-12">
 
@@ -298,12 +311,30 @@ const Dashboard: React.FC<{ onViewChange: (view: ViewState) => void, onContactCl
         </div>
 
         {/* Trust Indicators */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-slate-100 py-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-slate-100 py-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500 max-w-5xl mx-auto">
            {['Schnelligkeit', 'Datenfokus', 'Transparenz', 'Swiss Made'].map((item, i) => (
              <div key={i} className="text-center font-bold text-slate-400 uppercase tracking-widest text-xs flex items-center justify-center gap-2">
                <CheckCircle2 size={14} /> {item}
              </div>
            ))}
+        </div>
+
+        {/* Platform Logobar Carousel */}
+        <div className="pt-12 w-full max-w-5xl mx-auto overflow-hidden animate-fade-in delay-100 relative">
+          {/* Edge fade effect */}
+          <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+          
+           <div className="flex w-max animate-scroll gap-16 md:gap-24">
+             {carouselItems.map((platform, i) => (
+               <img 
+                 key={i} 
+                 src={platform.src} 
+                 alt={platform.name} 
+                 className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300" 
+               />
+             ))}
+           </div>
         </div>
       </section>
 
